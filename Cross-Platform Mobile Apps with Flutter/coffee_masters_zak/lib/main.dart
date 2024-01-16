@@ -1,3 +1,4 @@
+import 'package:coffee_masters_zak/offerspage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,21 +37,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Coffee Masters',
       theme: ThemeData(
-        primaryColor: Colors.lightBlueAccent,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
+        primaryColor: Colors.brown,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page!!'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -61,11 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: const Image(image: AssetImage('images/logo.png')),
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
         body: const Center(
-          child: Greet(),
+          child: OffersPage(),
         ));
   }
 }
