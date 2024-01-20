@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:coffee_masters_zak/datamanager.dart';
 import 'package:coffee_masters_zak/datamodel.dart';

@@ -47,18 +47,22 @@ class _OrderPageState extends State<OrderPage> {
               child: SizedBox(
                 width: 200,
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.green.shade900),
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => const OrderAlert());
-                      setState(() {
-                        // we update the cart within setState so the current widget will get re-rendered
-                        widget.dataManager.cartClear();
-                      });
-                    },
-                    child: const Text("Send Order")),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const OrderAlert());
+                    setState(() {
+                      // we update the cart within setState so the current widget will get re-rendered
+                      widget.dataManager.cartClear();
+                    });
+                  },
+                  child: const Text(
+                    "Send Order",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
               ),
             )
           ],

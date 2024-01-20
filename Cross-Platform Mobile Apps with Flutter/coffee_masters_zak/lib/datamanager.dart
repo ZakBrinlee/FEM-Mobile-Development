@@ -37,7 +37,6 @@ class DataManager {
     bool found = false;
     log('inside cartAdd with product');
 
-    cart.add(ItemInCart(product: p, quantity: 1));
     for (var item in cart) {
       log("inside cartAdd loop");
 
@@ -47,11 +46,10 @@ class DataManager {
         found = true;
         break;
       }
-
-      if (!found) {
-        log("item not in cart, call add");
-        cart.add(ItemInCart(product: p, quantity: 1));
-      }
+    }
+    if (!found) {
+      log("item not in cart, call add");
+      cart.add(ItemInCart(product: p, quantity: 1));
     }
   }
 
